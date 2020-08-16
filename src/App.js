@@ -3,7 +3,7 @@ import React from 'react';
 //to access a piece of state:
 import {useSelector, useDispatch} from 'react-redux'
 import {increment} from './actions'
-
+import {decrement} from './actions'
 
 function App() {
   const counter = useSelector(state =>state.counter)
@@ -13,8 +13,8 @@ function App() {
   return (
     <div>
       <h1>Counter {counter}</h1>
-      <button onClick = {() => dispatch(increment())}>+</button>
-      <button>-</button>
+      <button onClick = {() => dispatch(increment(5))}>+</button>
+      <button onClick = {() => dispatch(decrement())}>-</button>
       {isLogged ?
       <h3>valuable information i shouldn't see</h3>
       :
